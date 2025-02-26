@@ -1,0 +1,10 @@
+<!-- Resume Upload (Visible Only on Route) -->
+<section *ngIf="isResumeUploadPage" class="section">
+    <h1>Upload your Resume</h1>
+    <form (ngSubmit)="onSubmit()">
+      <input type="file" (change)="onFileChange($event)" accept=".pdf,.doc,.docx" required />
+      <button type="submit" class="btn btn-primary" [disabled]="!selectedFile">Upload</button>
+      <p *ngIf="uploadStatus.success" class="text-success">Upload Successful!</p>
+      <p *ngIf="uploadStatus.error" class="text-danger">Upload Failed! {{ uploadStatus.error }}</p>
+    </form>
+  </section>
