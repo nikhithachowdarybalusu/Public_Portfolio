@@ -18,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';  // For tabs
 import { MatSidenavModule } from '@angular/material/sidenav';  // For sidenav
 import { MatIconModule } from '@angular/material/icon';  // For icons
-import { MatListModule } from '@angular/material/list'; // For Lists
+import { MatListModule } from '@angular/material/list';
+import { ProjectDescriptionComponent } from './project-description/project-description.component'; // For Lists
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatListModule } from '@angular/material/list'; // For Lists
     SkillsComponent,
     ProfessionalExperienceComponent,
     ContactComponent,
-    ResumeComponent
+    ResumeComponent,
+    ProjectDescriptionComponent
   ],
   imports: [
     BrowserModule,
