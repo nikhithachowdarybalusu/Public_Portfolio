@@ -1,14 +1,92 @@
-<!-- <h1>Hello, from navbar</h1> -->
+<!-- <h1>Hello, from navbar</h1>
 <app-navbar></app-navbar>
 
 <main>
   <app-home></app-home>
-  <!-- <app-about></app-about>
+  <app-about></app-about>
   <app-projects></app-projects>
   <app-resume></app-resume>
-  <app-contact></app-contact> -->
+  <app-contact></app-contact>
 </main>
 
 
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav for navigation -->
+  <mat-sidenav #sidenav mode="side" class="sidenav" [(opened)]="opened">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let section of sections" [routerLink]="section.link" routerLinkActive="active">
+        <mat-icon mat-list-icon>{{ section.icon }}</mat-icon>
+        {{ section.name }}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Button to open sidenav on mobile -->
+    <button mat-icon-button (click)="sidenav.toggle()" class="menu-toggle">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Main content -->
+
+    <!-- Smooth scrolling content -->
+    <div id="profile" class="section">
+      <div class="profile-container">
+        <img src="assets/profile.jpg" alt="Profile Picture" class="profile-img">
+        <p class="summary">
+          <strong>Your Name</strong><br>
+          Web Developer | Designer<br>
+          Brief summary about you.
+        </p>
+      </div>
+    </div>
+
+    <div id="resume" class="section">
+      <h2>Resume</h2>
+      <p>Download your resume or show details here.</p>
+    </div>
+
+    <div id="projects" class="section">
+      <h2>Projects</h2>
+      <mat-tab-group>
+        <mat-tab label="Project 1" [routerLink]="['/project', '1']">Description of Project 1</mat-tab>
+        <mat-tab label="Project 2" [routerLink]="['/project', '2']">Description of Project 2</mat-tab>
+        <mat-tab label="Project 3" [routerLink]="['/project', '3']">Description of Project 3</mat-tab>
+      </mat-tab-group>
+    </div>
+
+    <div id="skills" class="section">
+      <h2>Skills</h2>
+      <p>List of your skills (e.g., JavaScript, Angular, etc.)</p>
+    </div>
+
+    <div id="internship" class="section">
+      <h2>Internship</h2>
+      <p>Your internship experiences go here.</p>
+    </div>
+
+    <div id="job-experience" class="section">
+      <h2>Job Experience</h2>
+      <p>Details about your job experiences.</p>
+    </div>
+
+    <div id="education" class="section">
+      <h2>Education</h2>
+      <p>Details about your education.</p>
+    </div>
+
+    <div id="hobbies" class="section">
+      <h2>Hobbies and Interests</h2>
+      <p>Your hobbies and interests.</p>
+    </div>
+
+    <div id="achievements" class="section">
+      <h2>Achievements and Leadership</h2>
+      <p>Details about your achievements and leadership experience.</p>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

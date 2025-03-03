@@ -12,6 +12,13 @@ import { SkillsComponent } from './pages/skills/skills.component';
 import { ProfessionalExperienceComponent } from './pages/professional-experience/professional-experience.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ResumeComponent } from './pages/resume/resume.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Import Material modules
+import { MatTabsModule } from '@angular/material/tabs';  // For tabs
+import { MatSidenavModule } from '@angular/material/sidenav';  // For sidenav
+import { MatIconModule } from '@angular/material/icon';  // For icons
+import { MatListModule } from '@angular/material/list'; // For Lists
 
 @NgModule({
   declarations: [
@@ -28,7 +35,12 @@ import { ResumeComponent } from './pages/resume/resume.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
