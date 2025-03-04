@@ -23,4 +23,7 @@ export class AppComponent {
   ];
 
   constructor(private router: Router){}
+
+  ngOnInit(){
+    console.log("app.component.ts was called!");
 }
